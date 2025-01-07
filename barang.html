@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etalase Produk Perhiasan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-info h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product-info p {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .product-info .price {
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Etalase Produk Perhiasan</h1>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="istockphoto-1431105642-1024x1024.jpg" alt="cincin emas">
+                <div class="product-info">
+                    <h2>Cincin Emas</h2>
+                    <p>Deskripsi singkat tentang cincin emas ini.</p>
+                    <p class="price">Rp 1.500.000</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="istockphoto-493610261-1024x1024.jpg" alt="Kalung Berlian">
+                <div class="product-info">
+                    <h2>Kalung Berlian</h2>
+                    <p>Deskripsi singkat tentang kalung berlian ini.</p>
+                    <p class="price">Rp 3.000.000</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="istockphoto-1289163992-1024x1024.jpg" alt="Anting Perak">
+                <div class="product-info">
+                    <h2>Anting Perak</h2>
+                    <p>Deskripsi singkat tentang anting perak ini.</p>
+                    <p class="price">Rp 750.000</p>
+                </div>
+            </div>
+        </div>
+        <!-- Tambahkan lebih banyak produk sesuai kebutuhan -->
+    </div>
+    </div>
+
+</body>
+
+</html>

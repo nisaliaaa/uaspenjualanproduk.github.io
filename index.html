@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login, Daftar, dan Lupa Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .input-group input:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #6a11cb;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer-links a {
+            color: #2575fc;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Form Login -->
+        <div class="form-container active" id="login-form">
+            <h2>Login</h2>
+            <form id="login" action="beranda.uas.html" method="GET">
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Kata Sandi" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <div class="footer-links">
+                <a href="javascript:void(0)" onclick="showRegisterForm()">Daftar</a> | 
+                <a href="javascript:void(0)" onclick="showForgotPasswordForm()">Lupa Kata Sandi?</a>
+            </div>
+        </div>
+
+        <!-- Form Daftar -->
+        <div class="form-container" id="register-form">
+            <h2>Daftar</h2>
+            <form id="register" action="beranda.uas.html" method="GET">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Nama Pengguna" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Kata Sandi" required>
+                </div>
+                <button type="submit" class="btn">Daftar</button>
+            </form>
+            <div class="footer-links">
+                <a href="javascript:void(0)" onclick="showLoginForm()">Sudah punya akun? Login</a>
+            </div>
+        </div>
+
+        <!-- Form Lupa Password -->
+        <div class="form-container" id="forgot-password-form">
+            <h2>Lupa Kata Sandi?</h2>
+            <form id="forgot-password" onsubmit="handleForgotPassword(event)">
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <button type="submit" class="btn">Kirim Permintaan Reset</button>
+            </form>
+            <div class="footer-links">
+                <a href="javascript:void(0)" onclick="showRegisterForm()">Kembali ke Daftar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLoginForm() {
+            document.getElementById('login-form').classList.add('active');
+            document.getElementById('register-form').classList.remove('active');
+            document.getElementById('forgot-password-form').classList.remove('active');
+        }
+
+        function showRegisterForm() {
+            document.getElementById('register-form').classList.add('active');
+            document.getElementById('login-form').classList.remove('active');
+            document.getElementById('forgot-password-form').classList.remove('active');
+        }
+
+        function showForgotPasswordForm() {
+            document.getElementById('forgot-password-form').classList.add('active');
+            document.getElementById('login-form').classList.remove('active');
+            document.getElementById('register-form').classList.remove('active');
+        }
+
+        function handleForgotPassword(event) {
+            event.preventDefault();
+            alert('Permintaan reset kata sandi telah dikirim. Anda akan diarahkan ke halaman Daftar.');
+
+            // Beralih ke form Daftar setelah mengirim permintaan reset
+            showRegisterForm();
+        }
+    </script>
+
+</body>
+</html>
